@@ -306,16 +306,18 @@
 
       <!-- Project Filter Tabs -->
       <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="trajectory">Trajectory & RL</button>
-        <button class="filter-btn" data-filter="vision">Vision & YOLO</button>
+        <button class="filter-btn active" data-filter="all">All Projects (8)</button>
+        <button class="filter-btn" data-filter="vision">Vision &amp; CNN</button>
+        <button class="filter-btn" data-filter="nlp">NLP &amp; Text</button>
+        <button class="filter-btn" data-filter="analytics">Risk &amp; Analytics</button>
+        <button class="filter-btn" data-filter="trajectory">Robotics &amp; Trajectory</button>
         <button class="filter-btn" data-filter="generative">Generative AI</button>
         <button class="filter-btn" data-filter="medical">Medical AI</button>
       </div>
 
       <div class="projects-grid">
 
-        <!-- Project 1: Trajectory Prediction -->
+        <-h Project 1: Trajectory Prediction -->
         <article class="project-card" data-category="trajectory generative">
           <div class="project-img-wrapper">
             <img src="assets/images/project_trajectory.jpg" alt="Pedestrian Trajectory Prediction with Social-STGCNN" loading="lazy">
@@ -343,14 +345,14 @@
           </div>
         </article>
 
-        <!-- Project 2: Helmet Detection & Text-to-Video -->
+        <-h Project 2: Helmet Detection & Text-to-Video -->
         <article class="project-card" data-category="vision generative">
           <div class="project-img-wrapper">
             <img src="assets/images/project_helmet.jpg" alt="Real-Time Helmet Detection and Text-to-Video" loading="lazy">
-            <span class="project-overlay-badge">YOLOv11 & Diffusion</span>
+            <span class="project-overlay-badge">YOLOv11 &amp; Diffusion</span>
           </div>
           <div class="project-content">
-            <h3 class="project-title">Real-Time Helmet Detection & Video Generation</h3>
+            <h3 class="project-title">Real-Time Helmet Detection &amp; Video Generation</h3>
             <p class="project-desc">
               Real-time multi-class worker safety detection using YOLOv11 seamlessly integrated with Hugging Face generative video diffusion models for synthetic verification.
             </p>
@@ -371,7 +373,63 @@
           </div>
         </article>
 
-        <!-- Project 3: CycleGAN Image Translation -->
+        <-h Project 3: Face Mask Detection Custom CNN -->
+        <article class="project-card" data-category="vision medical">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_face_mask.png" alt="Real-Time Face Mask Detection using Custom CNN" loading="lazy">
+            <span class="project-overlay-badge">Custom CNN | 98.95% Acc</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Real-Time Face Mask Detection (MaskCNN)</h3>
+            <p class="project-desc">
+              Lightweight 3-stage Convolutional Neural Network with Batch Normalization, Global Average Pooling, and Dropout for masked vs. unmasked face classification (98.95% accuracy, 0.9977 AUC).
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">Custom CNN</span>
+              <span class="project-tag">GAP Pooling</span>
+              <span class="project-tag">AUC: 0.9977</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/Face_Mask_Detection_Custom_CNN" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://github.com/MSD-99/Face_Mask_Detection_Custom_CNN/blob/main/Face_Mask_Detection_Custom_CNN.ipynb" target="_blank" rel="noopener noreferrer" class="project-btn-secondary">
+                <i class="fa-solid fa-book-open"></i> Notebook
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <-h Project 4: Cancer Histopathology Classification -->
+        <article class="project-card" data-category="medical vision">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_cancer.jpg" alt="Cancer Histopathology Classification with ViT and ResNet" loading="lazy">
+            <span class="project-overlay-badge">LC25000 Benchmark</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Cancer Histopathology Classification</h3>
+            <p class="project-desc">
+              Comparative study of ResNet-50 vs. Vision Transformers (ViT-Base) for 5-class automated diagnosis on 25,000 lung and colon biopsy images, achieving 99.98% accuracy.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Vision Transformer</span>
+              <span class="project-tag">ResNet-50</span>
+              <span class="project-tag">Digital Pathology</span>
+              <span class="project-tag">99.98% Acc</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/Cancer-Histopathology-Classification-ViT-ResNet" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://github.com/MSD-99/Cancer-Histopathology-Classification-ViT-ResNet/blob/main/cancer_classification_vit_resnet.ipynb" target="_blank" rel="noopener noreferrer" class="project-btn-secondary">
+                <i class="fa-solid fa-book-open"></i> Notebook
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <-h Project 5: CycleGAN Image Translation -->
         <article class="project-card" data-category="generative vision">
           <div class="project-img-wrapper">
             <img src="assets/images/project_cyclegan.jpg" alt="CycleGAN Image Translation Horse to Zebra" loading="lazy">
@@ -399,28 +457,86 @@
           </div>
         </article>
 
-        <!-- Project 4: Cancer Histopathology Classification -->
-        <article class="project-card" data-category="medical vision">
+        <-h Project 6: Credit Card Fraud Detection -->
+        <article class="project-card" data-category="analytics">
           <div class="project-img-wrapper">
-            <img src="assets/images/project_cancer.jpg" alt="Cancer Histopathology Classification with ViT and ResNet" loading="lazy">
-            <span class="project-overlay-badge">LC25000 Benchmark</span>
+            <img src="assets/images/project_credit_card.png" alt="Credit Card Fraud Detection and Financial Anomaly Profiling" loading="lazy">
+            <span class="project-overlay-badge">1M Transactions Benchmark</span>
           </div>
           <div class="project-content">
-            <h3 class="project-title">Cancer Histopathology Classification</h3>
+            <h3 class="project-title">Credit Card Fraud Detection &amp; Risk Profiling</h3>
             <p class="project-desc">
-              Comparative study of ResNet-50 vs. Vision Transformers (ViT-Base) for 5-class automated diagnosis on 25,000 lung and colon biopsy images, achieving 99.98% accuracy.
+              Exploratory data analysis and financial anomaly risk modeling across 1,000,000 transactions, addressing severe class imbalance and identifying purchase deviation drivers.
             </p>
             <div class="project-tags">
-              <span class="project-tag">Vision Transformer</span>
-              <span class="project-tag">ResNet-50</span>
-              <span class="project-tag">Digital Pathology</span>
-              <span class="project-tag">99.98% Acc</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">FinTech</span>
+              <span class="project-tag">Risk Analytics</span>
+              <span class="project-tag">Imbalanced Data</span>
             </div>
             <div class="project-footer">
-              <a href="https://github.com/MSD-99/Cancer-Histopathology-Classification-ViT-ResNet" target="_blank" rel="noopener noreferrer" class="project-link">
+              <a href="https://github.com/MSD-99/Credit_Card_Fraud_Detection_EDA_ML" target="_blank" rel="noopener noreferrer" class="project-link">
                 View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
-              <a href="https://github.com/MSD-99/Cancer-Histopathology-Classification-ViT-ResNet/blob/main/cancer_classification_vit_resnet.ipynb" target="_blank" rel="noopener noreferrer" class="project-btn-secondary">
+              <a href="https://github.com/MSD-99/Credit_Card_Fraud_Detection_EDA_ML/blob/main/Credit_Card_Fraud_Analysis.ipynb" target="_blank" rel="noopener noreferrer" class="project-btn-secondary">
+                <i class="fa-solid fa-book-open"></i> Notebook
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <-h Project 7: Amazon Fashion NLP Sentiment -->
+        <article class="project-card" data-category="nlp">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_amazon_nlp.png" alt="Amazon Fashion NLP Sentiment Classification" loading="lazy">
+            <span class="project-overlay-badge">NLP &amp; GridSearch</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Amazon Fashion Sentiment Classification</h3>
+            <p class="project-desc">
+              End-to-end NLP pipeline for customer feedback sentiment classification using Bag-of-Words and TF-IDF representations, benchmarking Logistic Regression, SVM, and Trees.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">NLP</span>
+              <span class="project-tag">Scikit-Learn</span>
+              <span class="project-tag">Text Mining</span>
+              <span class="project-tag">GridSearchCV</span>
+              <span class="project-tag">82% Acc</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/Amazon_Fashion_Sentiment_Analysis_NLP" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://github.com/MSD-99/Amazon_Fashion_Sentiment_Analysis_NLP/blob/main/Amazon_Fashion_Sentiment_Analysis_NLP.ipynb" target="_blank" rel="noopener noreferrer" class="project-btn-secondary">
+                <i class="fa-solid fa-book-open"></i> Notebook
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <-h Project 8: U.S. Medical Cost Econometric Regression -->
+        <article class="project-card" data-category="analytics medical">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_medical_cost.png" alt="U.S. Medical Cost Multiple Linear Regression" loading="lazy">
+            <span class="project-overlay-badge">Econometrics &amp; ML</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">U.S. Medical Cost &amp; Insurance Risk Modeling</h3>
+            <p class="project-desc">
+              Multiple Linear Regression econometric modeling evaluating demographic, biometric, and lifestyle determinants of medical charges across 1,338 beneficiaries (R² = 0.75).
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Regression</span>
+              <span class="project-tag">Econometrics</span>
+              <span class="project-tag">Risk Modeling</span>
+              <span class="project-tag">R²: 0.75</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/US_Medical_Cost_Regression_Analysis" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="https://github.com/MSD-99/US_Medical_Cost_Regression_Analysis/blob/main/US_Medical_Cost_Regression_Analysis.ipynb" target="_blank" rel="noopener noreferrer" class="project-btn-secondary">
                 <i class="fa-solid fa-book-open"></i> Notebook
               </a>
             </div>
