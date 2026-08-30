@@ -1483,3 +1483,46 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: underline;
   transform: translateY(-1px);
 }
+
+/* Enhanced JSON Syntax Highlighting for Terminal */
+.json-container {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.json-row {
+  display: table-row;
+  line-height: 1.65;
+}
+
+.json-row:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.json-ln {
+  display: table-cell;
+  width: 28px;
+  text-align: right;
+  padding-right: 14px;
+  color: #475569;
+  user-select: none;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.json-code {
+  display: table-cell;
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.json-key { color: #38bdf8; font-weight: 500; }
+.json-str { color: #34d399; }
+.json-brace { color: #c084fc; font-weight: 600; }
+.json-bracket { color: #f472b6; font-weight: 600; }
+.json-bool { color: #fbbf24; font-weight: 600; }
+.json-colon { color: #94a3b8; }
+.json-comma { color: #64748b; }
