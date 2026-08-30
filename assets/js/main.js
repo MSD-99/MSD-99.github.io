@@ -239,3 +239,50 @@ function initScrollReveal() {
 
   elements.forEach((el) => observer.observe(el));
 }
+
+/* ==========================================================================
+   6. Interactive IDE Card Tabs & Live Simulation Execution
+   ========================================================================== */
+function initIdeCard() {
+  const tabs = document.querySelectorAll('.ide-tab');
+  const panes = document.querySelectorAll('.tab-pane');
+  const runBtn = document.getElementById('run-sim-btn');
+  const consoleEl = document.getElementById('sim-console');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => t.classList.remove('active'));
+      panes.forEach((p) => p.classList.remove('active'));
+
+      tab.classList.add('active');
+      const targetId = tab.getAttribute('data-tab');
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) targetPane.classList.add('active');
+    });
+  });
+
+  if (runBtn && consoleEl) {
+    runBtn.addEventListener('click', () => {
+      consoleEl.classList.toggle('active');
+      if (consoleEl.classList.contains('active')) {
+        runBtn.innerHTML = '<i class="fa-solid fa-rotate"></i> Running...';
+        runBtn.style.background = 'rgba(56, 189, 248, 0.2)';
+        runBtn.style.color = '#38bdf8';
+        
+        setTimeout(() => {
+          runBtn.innerHTML = '<i class="fa-solid fa-check"></i> Executed';
+          runBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+          runBtn.style.color = '#34d399';
+        }, 600);
+      } else {
+        runBtn.innerHTML = '<i class="fa-solid fa-play"></i> Run Agent';
+        runBtn.style.background = 'rgba(16, 185, 129, 0.15)';
+        runBtn.style.color = '#34d399';
+      }
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initIdeCard();
+});

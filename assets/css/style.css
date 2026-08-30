@@ -1526,3 +1526,138 @@ h1, h2, h3, h4, h5, h6 {
 .json-bool { color: #fbbf24; font-weight: 600; }
 .json-colon { color: #94a3b8; }
 .json-comma { color: #64748b; }
+
+/* ==========================================================================
+   Advanced Interactive IDE Card with Tabs, Python Syntax & Live Run Output
+   ========================================================================== */
+.terminal-card {
+  background: rgba(11, 17, 33, 0.95);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.7), 0 0 50px rgba(99, 102, 241, 0.18);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.terminal-header {
+  background: rgba(7, 11, 22, 0.98);
+  padding: 0.6rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 0.75rem;
+}
+
+.terminal-tabs {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.ide-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-smooth);
+}
+
+.ide-tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ide-tab.active {
+  background: rgba(30, 41, 59, 0.85);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.ide-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.ide-btn-run {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.ide-btn-run:hover {
+  background: rgba(16, 185, 129, 0.3);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Python Syntax Highlighting Tokens */
+.py-kw { color: #f43f5e; font-weight: 600; } /* def, class, return, import, from */
+.py-cls { color: #fbbf24; font-weight: 600; } /* Class names */
+.py-func { color: #60a5fa; } /* Function names */
+.py-self { color: #f472b6; font-style: italic; } /* self */
+.py-str { color: #34d399; } /* Strings */
+.py-num { color: #a78bfa; } /* Numbers */
+.py-comment { color: #64748b; font-style: italic; } /* Comments */
+.py-param { color: #e2e8f0; }
+.py-op { color: #38bdf8; }
+
+/* Simulation Console Output Drawer */
+.sim-console {
+  background: #050811;
+  border-top: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 1rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  color: #cbd5e1;
+  display: none;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.sim-console.active {
+  display: block;
+  animation: slideDown 0.35s ease;
+}
+
+.sim-line {
+  margin-bottom: 0.35rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sim-prefix { color: #10b981; }
+.sim-val { color: #38bdf8; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
