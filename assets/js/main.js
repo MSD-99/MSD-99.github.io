@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Back to Top Button
   initBackToTop();
+
+  // 5. Scroll Reveal Animations
+  initScrollReveal();
 });
 
 /* ==========================================================================
@@ -213,4 +216,26 @@ function initBackToTop() {
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+}
+
+/* ==========================================================================
+   5. Scroll Reveal Observer
+   ========================================================================== */
+function initScrollReveal() {
+  const elements = document.querySelectorAll('.section, .hero-content, .hero-visual, .seq-card, .research-card, .project-card, .cert-card, .contact-card');
+  
+  elements.forEach((el) => el.classList.add('reveal-on-scroll'));
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+  );
+
+  elements.forEach((el) => observer.observe(el));
 }
