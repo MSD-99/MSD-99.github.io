@@ -123,78 +123,59 @@
         </div>
 
         <div class="hero-visual">
-          <div class="terminal-card">
-            <!-- IDE Header with Tabs and Run Button -->
-            <div class="terminal-header">
-              <div class="terminal-dots">
-                <span></span><span></span><span></span>
+          <div class="academic-profile-card">
+            <div class="apc-header">
+              <div class="apc-logos">
+                <div class="apc-logo-box" title="Tarbiat Modares University">
+                  <img src="assets/images/logos/tmu_logo.png" alt="TMU Logo" loading="lazy">
+                </div>
+                <div class="apc-logo-box" title="Isfahan University of Technology">
+                  <img src="assets/images/logos/iut_logo.png" alt="IUT Logo" loading="lazy">
+                </div>
               </div>
-              <div class="terminal-tabs">
-                <button class="ide-tab active" data-tab="tab-python">
-                  <i class="fa-brands fa-python" style="color: #38bdf8;"></i> agent.py
-                </button>
-                <button class="ide-tab" data-tab="tab-json">
-                  <i class="fa-solid fa-code" style="color: #fbbf24;"></i> profile.json
-                </button>
-              </div>
-              <div class="ide-actions">
-                <button class="ide-btn-run" id="run-sim-btn" title="Run Agent Simulation">
-                  <i class="fa-solid fa-play"></i> Run Agent
-                </button>
-              </div>
+              <span class="apc-badge">Research Profile</span>
             </div>
 
-            <!-- Tab 1: Python Code -->
-            <div class="tab-pane active" id="tab-python">
-              <div class="terminal-body" style="padding: 1.15rem 1.4rem;">
-                <div class="json-container">
-                  <div class="json-row"><div class="json-ln">1</div><div class="json-code"><span class="py-kw">import</span> <span class="py-param">torch</span></div></div>
-                  <div class="json-row"><div class="json-ln">2</div><div class="json-code"><span class="py-kw">import</span> <span class="py-param">torch.nn</span> <span class="py-kw">as</span> <span class="py-param">nn</span></div></div>
-                  <div class="json-row"><div class="json-ln">3</div><div class="json-code"></div></div>
-                  <div class="json-row"><div class="json-ln">4</div><div class="json-code"><span class="py-kw">class</span> <span class="py-cls">SafeAutonomousAgent</span>(<span class="py-param">nn.Module</span>):</div></div>
-                  <div class="json-row"><div class="json-ln">5</div><div class="json-code">    <span class="py-kw">def</span> <span class="py-func">__init__</span>(<span class="py-self">self</span>):</div></div>
-                  <div class="json-row"><div class="json-ln">6</div><div class="json-code">        <span class="py-self">self</span>.researcher <span class="py-op">=</span> <span class="py-str">"Mehdi Sadeghian"</span></div></div>
-                  <div class="json-row"><div class="json-ln">7</div><div class="json-code">        <span class="py-self">self</span>.affiliation <span class="py-op">=</span> <span class="py-str">"Tarbiat Modares Univ"</span></div></div>
-                  <div class="json-row"><div class="json-ln">8</div><div class="json-code">        <span class="py-self">self</span>.backbone <span class="py-op">=</span> <span class="py-cls">ST_GCNN</span>(latent_dim<span class="py-op">=</span><span class="py-num">256</span>)</div></div>
-                  <div class="json-row"><div class="json-ln">9</div><div class="json-code">        <span class="py-self">self</span>.policy <span class="py-op">=</span> <span class="py-cls">HybridRL</span>(safety_margin<span class="py-op">=</span><span class="py-num">0.99</span>)</div></div>
-                  <div class="json-row"><div class="json-ln">10</div><div class="json-code"></div></div>
-                  <div class="json-row"><div class="json-ln">11</div><div class="json-code">    <span class="py-kw">def</span> <span class="py-func">step</span>(<span class="py-self">self</span>, <span class="py-param">urban_scene</span>):</div></div>
-                  <div class="json-row"><div class="json-ln">12</div><div class="json-code">        trajectories <span class="py-op">=</span> <span class="py-self">self</span>.backbone(urban_scene)</div></div>
-                  <div class="json-row"><div class="json-ln">13</div><div class="json-code">        safe_action <span class="py-op">=</span> <span class="py-self">self</span>.policy.act(trajectories)</div></div>
-                  <div class="json-row"><div class="json-ln">14</div><div class="json-code">        <span class="py-kw">return</span> safe_action  <span class="py-comment"># Safe Navigation</span></div></div>
+            <div class="apc-degrees">
+              <div class="apc-degree-item">
+                <i class="fa-solid fa-graduation-cap apc-degree-icon"></i>
+                <div class="apc-degree-text">
+                  <strong>M.Sc. in Mechatronics Engineering</strong>
+                  <span>Tarbiat Modares University &bull; 2024 &ndash; Present</span>
+                </div>
+              </div>
+              <div class="apc-degree-item">
+                <i class="fa-solid fa-building-columns apc-degree-icon"></i>
+                <div class="apc-degree-text">
+                  <strong>B.Sc. in Electrical Engineering (Control)</strong>
+                  <span>Isfahan University of Technology &bull; 2018 &ndash; 2023</span>
                 </div>
               </div>
             </div>
 
-            <!-- Tab 2: JSON Profile -->
-            <div class="tab-pane" id="tab-json">
-              <div class="terminal-body" style="padding: 1.15rem 1.4rem;">
-                <div class="json-container">
-                  <div class="json-row"><div class="json-ln">1</div><div class="json-code"><span class="json-brace">{</span></div></div>
-                  <div class="json-row"><div class="json-ln">2</div><div class="json-code">  <span class="json-key">"researcher"</span><span class="json-colon">:</span> <span class="json-str">"Mehdi Sadeghian"</span><span class="json-comma">,</span></div></div>
-                  <div class="json-row"><div class="json-ln">3</div><div class="json-code">  <span class="json-key">"affiliation"</span><span class="json-colon">:</span> <span class="json-brace">{</span></div></div>
-                  <div class="json-row"><div class="json-ln">4</div><div class="json-code">    <span class="json-key">"university"</span><span class="json-colon">:</span> <span class="json-str">"Tarbiat Modares University"</span><span class="json-comma">,</span></div></div>
-                  <div class="json-row"><div class="json-ln">5</div><div class="json-code">    <span class="json-key">"degree"</span><span class="json-colon">:</span> <span class="json-str">"M.Sc. Candidate (Mechatronics)"</span></div></div>
-                  <div class="json-row"><div class="json-ln">6</div><div class="json-code">  <span class="json-brace">}</span><span class="json-comma">,</span></div></div>
-                  <div class="json-row"><div class="json-ln">7</div><div class="json-code">  <span class="json-key">"core_research"</span><span class="json-colon">:</span> <span class="json-bracket">[</span></div></div>
-                  <div class="json-row"><div class="json-ln">8</div><div class="json-code">    <span class="json-str">"Safe Autonomous Navigation & Control"</span><span class="json-comma">,</span></div></div>
-                  <div class="json-row"><div class="json-ln">9</div><div class="json-code">    <span class="json-str">"Hybrid Reinforcement Learning & IL"</span><span class="json-comma">,</span></div></div>
-                  <div class="json-row"><div class="json-ln">10</div><div class="json-code">    <span class="json-str">"Multi-Agent Trajectory Forecasting"</span></div></div>
-                  <div class="json-row"><div class="json-ln">11</div><div class="json-code">  <span class="json-bracket">]</span><span class="json-comma">,</span></div></div>
-                  <div class="json-row"><div class="json-ln">12</div><div class="json-code">  <span class="json-key">"stack"</span><span class="json-colon">:</span> <span class="json-bracket">[</span><span class="json-str">"Python"</span><span class="json-comma">,</span> <span class="json-str">"PyTorch"</span><span class="json-comma">,</span> <span class="json-str">"Docker"</span><span class="json-comma">,</span> <span class="json-str">"MATLAB"</span><span class="json-bracket">]</span><span class="json-comma">,</span></div></div>
-                  <div class="json-row"><div class="json-ln">13</div><div class="json-code">  <span class="json-key">"actively_researching"</span><span class="json-colon">:</span> <span class="json-bool">true</span></div></div>
-                  <div class="json-row"><div class="json-ln">14</div><div class="json-code"><span class="json-brace">}</span></div></div>
-                </div>
+            <div class="apc-pillars-title">Core Research Focus</div>
+            <div class="apc-pillars">
+              <div class="apc-pillar-item">
+                <i class="fa-solid fa-car-side"></i>
+                <span>Safe Autonomous Navigation & Control</span>
+              </div>
+              <div class="apc-pillar-item">
+                <i class="fa-solid fa-brain"></i>
+                <span>Hybrid Reinforcement & Imitation Learning</span>
+              </div>
+              <div class="apc-pillar-item">
+                <i class="fa-solid fa-diagram-project"></i>
+                <span>Multi-Agent Trajectory Forecasting</span>
+              </div>
+              <div class="apc-pillar-item">
+                <i class="fa-solid fa-eye"></i>
+                <span>Computer Vision (ViTs & YOLOv11)</span>
               </div>
             </div>
 
-            <!-- Live Simulation Execution Drawer -->
-            <div class="sim-console" id="sim-console">
-              <div class="sim-line"><span class="sim-prefix">$</span> python3 agent.py --env urban_navigation</div>
-              <div class="sim-line"><span class="sim-prefix">[✓]</span> Loading ST-GCNN trajectory predictor... (ETH/UCY Benchmark)</div>
-              <div class="sim-line"><span class="sim-prefix">[✓]</span> Initializing Hybrid RL + Safety Barrier Policy...</div>
-              <div class="sim-line"><span class="sim-prefix">[✓]</span> Safety Violation Rate: <span class="sim-val">0.00%</span> | Navigation Success: <span class="sim-val">99.4%</span></div>
-              <div class="sim-line"><span class="sim-prefix">[🚀]</span> Target: <span class="sim-val">Active M.Sc. Research & Ph.D. Collaborations</span></div>
+            <div class="apc-footer">
+              <span class="apc-pulse-dot"></span>
+              <span>Open to Ph.D. Positions & Research Collaborations</span>
             </div>
           </div>
         </div>
