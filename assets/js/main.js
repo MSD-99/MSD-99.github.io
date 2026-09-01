@@ -57,7 +57,7 @@ function initParticleCanvas() {
       this.y = Math.random() * height;
       this.vx = (Math.random() - 0.5) * 0.7;
       this.vy = (Math.random() - 0.5) * 0.7;
-      this.radius = Math.random() * 1.8 + 1;
+      this.radius = Math.random() * 2.2 + 1.2;
       this.color = Math.random() > 0.4 ? '#38bdf8' : '#818cf8';
     }
 
@@ -111,7 +111,7 @@ function initParticleCanvas() {
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.strokeStyle = `rgba(99, 102, 241, ${alpha * 0.25})`;
-          ctx.lineWidth = 0.8;
+          ctx.lineWidth = 1.1;
           ctx.stroke();
         }
       }

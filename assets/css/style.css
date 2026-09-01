@@ -82,7 +82,7 @@ body {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.65;
+  opacity: 0.95;
 }
 
 /* Ambient Radial Glow Backdrops */
@@ -1809,8 +1809,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .apc-footer {
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.65rem 0.9rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   gap: 0.6rem;
