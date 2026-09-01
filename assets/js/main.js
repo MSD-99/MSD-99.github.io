@@ -36,10 +36,10 @@ function initParticleCanvas() {
   });
 
   const particles = [];
-  const particleCount = Math.min(Math.floor(window.innerWidth / 15), 85);
-  const maxDistance = 140;
+  const particleCount = Math.min(Math.floor(window.innerWidth / 12), 105);
+  const maxDistance = 165;
 
-  const mouse = { x: null, y: null, radius: 160 };
+  const mouse = { x: null, y: null, radius: 180 };
 
   window.addEventListener('mousemove', (e) => {
     mouse.x = e.x;
@@ -55,10 +55,10 @@ function initParticleCanvas() {
     constructor() {
       this.x = Math.random() * width;
       this.y = Math.random() * height;
-      this.vx = (Math.random() - 0.5) * 0.7;
-      this.vy = (Math.random() - 0.5) * 0.7;
-      this.radius = Math.random() * 2.2 + 1.2;
-      this.color = Math.random() > 0.4 ? '#38bdf8' : '#818cf8';
+      this.vx = (Math.random() - 0.5) * 0.8;
+      this.vy = (Math.random() - 0.5) * 0.8;
+      this.radius = Math.random() * 2.4 + 1.5;
+      this.color = Math.random() > 0.45 ? '#38bdf8' : '#818cf8';
     }
 
     update() {
@@ -75,17 +75,21 @@ function initParticleCanvas() {
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < mouse.radius) {
           const force = (mouse.radius - dist) / mouse.radius;
-          this.x -= (dx / dist) * force * 2.5;
-          this.y -= (dy / dist) * force * 2.5;
+          this.x -= (dx / dist) * force * 3;
+          this.y -= (dy / dist) * force * 3;
         }
       }
     }
 
     draw() {
+      ctx.save();
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
       ctx.fillStyle = this.color;
+      ctx.shadowColor = this.color;
+      ctx.shadowBlur = 12;
       ctx.fill();
+      ctx.restore();
     }
   }
 
@@ -107,12 +111,16 @@ function initParticleCanvas() {
 
         if (dist < maxDistance) {
           const alpha = 1 - dist / maxDistance;
+          ctx.save();
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(99, 102, 241, ${alpha * 0.25})`;
-          ctx.lineWidth = 1.1;
+          ctx.strokeStyle = `rgba(129, 140, 248, ${alpha * 0.85})`;
+          ctx.shadowColor = '#818cf8';
+          ctx.shadowBlur = 8;
+          ctx.lineWidth = 1.3;
           ctx.stroke();
+          ctx.restore();
         }
       }
     }
