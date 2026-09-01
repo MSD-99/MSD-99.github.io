@@ -1852,3 +1852,501 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%);
   margin-bottom: 1.25rem;
 }
+
+/* ==========================================================================
+   Comprehensive Mobile & Tablet Responsive Design (Screen Optimization)
+   ========================================================================== */
+
+/* Prevent horizontal overflow on mobile browsers */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
+}
+
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  .hero-badge {
+    margin: 0 auto 1.25rem;
+  }
+  .hero-description {
+    margin: 0 auto 2rem;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-title {
+    font-size: 2.85rem;
+  }
+  .academic-profile-card {
+    max-width: 580px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navigation Bar Mobile Optimization */
+  .navbar {
+    width: calc(100% - 1.5rem);
+    top: 0.75rem;
+    padding: 0.75rem 1.15rem;
+  }
+
+  .nav-brand span:first-child {
+    font-size: 1.25rem;
+  }
+
+  .brand-badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 0.65rem);
+    left: 0;
+    width: 100%;
+    background: rgba(10, 15, 28, 0.96);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: var(--radius-md);
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 0.85rem;
+    display: none;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 25px rgba(99, 102, 241, 0.2);
+    animation: mobileMenuSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.95rem;
+    border-radius: var(--radius-sm);
+    width: 100%;
+    display: block;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(99, 102, 241, 0.15);
+  }
+
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+  }
+
+  .nav-toggle:hover {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+
+  /* Section Spacings & Typography */
+  .container {
+    padding: 0 1.15rem;
+  }
+
+  .section {
+    padding: 4.5rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .section-subtitle {
+    font-size: 0.925rem;
+    line-height: 1.55;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    padding: 6.5rem 0 3.5rem;
+    min-height: auto;
+  }
+
+  .hero-content {
+    text-align: left;
+  }
+
+  .hero-badge {
+    margin: 0 0 1.15rem 0;
+    font-size: 0.775rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.15rem, 8vw, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .hero-description {
+    font-size: 0.925rem;
+    line-height: 1.6;
+    margin: 0 0 1.75rem 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 0.85rem 1.25rem;
+    font-size: 0.925rem;
+  }
+
+  /* Academic Profile Card on Mobile */
+  .academic-profile-card {
+    padding: 1.4rem 1.15rem;
+    border-radius: var(--radius-md);
+    max-width: 100%;
+  }
+
+  .apc-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .apc-logo-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .apc-badge {
+    font-size: 0.725rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .apc-status-banner {
+    font-size: 0.785rem;
+    padding: 0.55rem 0.75rem;
+    gap: 0.5rem;
+    margin: 0.2rem 0 0.85rem 0;
+  }
+
+  .apc-divider {
+    margin-bottom: 1rem;
+  }
+
+  .apc-degree-item {
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .apc-degree-icon {
+    font-size: 1rem;
+    margin-top: 2px;
+  }
+
+  .apc-degree-text strong {
+    font-size: 0.875rem;
+  }
+
+  .apc-degree-text span {
+    font-size: 0.775rem;
+  }
+
+  .apc-pillars-title {
+    font-size: 0.75rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .apc-pillars {
+    gap: 0.55rem;
+    margin-bottom: 0;
+  }
+
+  .apc-pillar-item {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.825rem;
+    gap: 0.65rem;
+  }
+
+  /* Education & Experience Timelines */
+  .seq-timeline {
+    padding-left: 0;
+  }
+
+  .seq-timeline::before {
+    display: none;
+  }
+
+  .seq-card {
+    flex-direction: column;
+    padding: 1.35rem 1.15rem;
+    gap: 1rem;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+  }
+
+  .seq-logo-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+  }
+
+  .seq-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .seq-title {
+    font-size: 1.15rem;
+  }
+
+  .seq-badge {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .seq-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .seq-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  .edu-courses-title {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .edu-courses-list {
+    gap: 0.45rem;
+  }
+
+  .course-chip {
+    font-size: 0.775rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  /* Project Filter Tabs - Mobile App Swipeable Carousel */
+  .project-filters {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.25rem 0.5rem 0.85rem 0.5rem;
+    margin: 0 -0.5rem 1.75rem -0.5rem;
+    scrollbar-width: none;
+  }
+
+  .project-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.825rem;
+  }
+
+  /* Projects Grid on Mobile */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    border-radius: var(--radius-md);
+  }
+
+  .project-img-wrapper {
+    height: 195px;
+  }
+
+  .project-overlay-badge {
+    font-size: 0.725rem;
+    padding: 0.25rem 0.6rem;
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .project-content {
+    padding: 1.35rem 1.15rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.65rem;
+  }
+
+  .project-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+
+  .project-tags {
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-tag {
+    font-size: 0.725rem;
+    padding: 0.25rem 0.55rem;
+  }
+
+  .project-footer {
+    padding-top: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .project-link {
+    font-size: 0.85rem;
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Research Areas on Mobile */
+  .research-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .research-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .research-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .research-card p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  /* Skills on Mobile */
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .skill-category-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .skill-category-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .skill-items-list {
+    gap: 0.45rem;
+  }
+
+  .skill-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  /* Contact on Mobile */
+  .contact-card {
+    padding: 2.25rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .contact-title {
+    font-size: 1.65rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .contact-desc {
+    font-size: 0.9rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .contact-link-item {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* Footer on Mobile */
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+@keyframes mobileMenuSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -167,14 +167,39 @@ function initNavbar() {
   });
 
   if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
+    const icon = navToggle.querySelector('i');
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       navLinks.classList.toggle('show');
+      if (icon) {
+        if (navLinks.classList.contains('show')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-xmark');
+        } else {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
     });
 
     links.forEach((link) => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('show');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navbar.contains(e.target) && navLinks.classList.contains('show')) {
+        navLinks.classList.remove('show');
+        if (icon) {
+          icon.classList.remove('fa-xmark');
+          icon.classList.add('fa-bars');
+        }
+      }
     });
   }
 }
