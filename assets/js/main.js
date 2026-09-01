@@ -211,24 +211,32 @@ function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');
 
+  function applyFilter(filter) {
+    projectCards.forEach((card) => {
+      const category = card.getAttribute('data-category') || '';
+      if (filter === 'all' || category.includes(filter)) {
+        card.style.display = 'flex';
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.style.animation = 'fadeIn 0.35s ease forwards';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.getAttribute('data-filter');
-
-      projectCards.forEach((card) => {
-        const category = card.getAttribute('data-category');
-        if (filter === 'all' || category.includes(filter)) {
-          card.style.display = 'flex';
-          card.style.animation = 'fadeIn 0.5s ease forwards';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      applyFilter(filter);
     });
   });
+
+  // Ensure all cards are visible on initial load
+  applyFilter('all');
 }
 
 /* ==========================================================================
@@ -255,7 +263,7 @@ function initBackToTop() {
    5. Scroll Reveal Observer
    ========================================================================== */
 function initScrollReveal() {
-  const elements = document.querySelectorAll('.section, .hero-content, .hero-visual, .seq-card, .research-card, .project-card, .cert-card, .contact-card');
+  const elements = document.querySelectorAll('.section, .hero-content, .hero-visual, .seq-card, .research-card, .cert-card, .contact-card');
   
   elements.forEach((el) => el.classList.add('reveal-on-scroll'));
 
