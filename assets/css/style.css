@@ -615,10 +615,89 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 15px var(--glow-blue);
 }
 
+.projects-carousel {
+  position: relative;
+  padding: 0 0 2.8rem;
+}
+
+.projects-viewport {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  touch-action: pan-x pan-y pinch-zoom;
+  padding: 0.5rem 0 1rem;
+}
+
+.projects-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-viewport:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 6px;
+  border-radius: var(--radius-lg);
+}
+
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  display: flex;
   gap: 2rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: calc(50% - 1.4rem);
+  z-index: 3;
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--card-hover-border);
+  border-radius: 50%;
+  background: rgba(10, 15, 28, 0.94);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: var(--transition-smooth);
+}
+
+.carousel-prev {
+  left: -1.5rem;
+}
+
+.carousel-next {
+  right: -1.5rem;
+}
+
+.carousel-btn:hover:not(:disabled),
+.carousel-btn:focus-visible {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  transform: scale(1.08);
+}
+
+.carousel-btn:focus-visible,
+.filter-btn:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.carousel-status {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 5rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
 }
 
 .project-card {
@@ -630,6 +709,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: var(--transition-smooth);
   display: flex;
   flex-direction: column;
+  flex: 0 0 calc((100% - 4rem) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .project-card:hover {
@@ -2359,5 +2442,72 @@ html, body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .carousel-prev {
+    left: 0.75rem;
+  }
+
+  .carousel-next {
+    right: 0.75rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .project-card {
+    flex-basis: calc((100% - 2rem) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-carousel {
+    padding-bottom: 3.5rem;
+  }
+
+  .project-card {
+    flex-basis: 100%;
+  }
+
+  .carousel-btn {
+    top: auto;
+    bottom: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .carousel-prev {
+    left: calc(50% - 5.5rem);
+  }
+
+  .carousel-next {
+    right: calc(50% - 5.5rem);
+  }
+
+  .carousel-status {
+    bottom: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .projects-viewport {
+    scroll-behavior: auto;
+  }
+
+  #particles-canvas {
+    display: none;
   }
 }

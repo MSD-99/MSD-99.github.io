@@ -51,7 +51,7 @@
         <span>MSD</span><span class="brand-badge">AI / Robotics</span>
       </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
       </button>
 
@@ -92,7 +92,7 @@
             Autonomous Systems & Deep Reinforcement Learning Researcher
           </p>
           <p class="hero-description">
-            I am a graduate researcher with a strong background in Mechatronics and Control Theory. My research focuses on developing intelligent, provably safe decision-making algorithms for <strong>autonomous vehicle navigation</strong>, <strong>multi-agent trajectory forecasting</strong>, and <strong>deep generative computer vision</strong> in dynamic urban environments.
+            I am a graduate researcher with a strong background in Mechatronics and Control Theory. My research focuses on developing intelligent, safety-aware decision-making algorithms for <strong>autonomous vehicle navigation</strong>, <strong>multi-agent trajectory forecasting</strong>, and <strong>deep generative computer vision</strong> in dynamic urban environments.
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn-primary">
@@ -289,7 +289,7 @@
           <div class="card-icon"><i class="fa-solid fa-dna"></i></div>
           <h3>Medical Image Analysis & ViTs</h3>
           <p>
-            High-accuracy diagnostic classification on histopathological biopsies using Vision Transformers (ViT) and Deep Residual Networks (ResNet) achieving >99.9% clinical accuracy.
+            Comparative histopathology image classification using Vision Transformers (ViT) and Deep Residual Networks (ResNet), with careful evaluation of model behavior and limitations.
           </p>
         </div>
       </div>
@@ -300,25 +300,27 @@
   <section class="section" id="projects">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Publications &amp; Code</span>
+        <span class="section-tag">Research Projects &amp; Code</span>
         <h2 class="section-title">Featured Research &amp; Engineering Repositories</h2>
         <p class="section-subtitle">
-          Fully documented, reproducible open-source implementations, benchmarks, and quantitative reports in PyTorch.
+          Open-source implementations, experiments, visual results, and technical documentation across AI, robotics, and control.
         </p>
       </div>
 
       <!-- Project Filter Tabs -->
       <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">All Projects (16)</button>
-        <button class="filter-btn" data-filter="rl">Reinforcement Learning (8)</button>
-        <button class="filter-btn" data-filter="vision">Vision &amp; CNN (4)</button>
-        <button class="filter-btn" data-filter="nlp">NLP &amp; LLMs (2)</button>
-        <button class="filter-btn" data-filter="trajectory">Trajectory &amp; Robotics (2)</button>
-        <button class="filter-btn" data-filter="generative">Generative AI (3)</button>
-        <button class="filter-btn" data-filter="analytics">Analytics &amp; ML (3)</button>
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All Projects (16)</button>
+        <button class="filter-btn" data-filter="rl" aria-pressed="false">Reinforcement Learning (8)</button>
+        <button class="filter-btn" data-filter="vision" aria-pressed="false">Vision &amp; CNN (4)</button>
+        <button class="filter-btn" data-filter="nlp" aria-pressed="false">NLP &amp; LLMs (2)</button>
+        <button class="filter-btn" data-filter="trajectory" aria-pressed="false">Trajectory &amp; Robotics (2)</button>
+        <button class="filter-btn" data-filter="generative" aria-pressed="false">Generative AI (3)</button>
+        <button class="filter-btn" data-filter="analytics" aria-pressed="false">Analytics &amp; ML (3)</button>
       </div>
 
-      <div class="projects-grid">
+      <div class="projects-carousel" aria-roledescription="carousel" aria-label="Research projects">
+        <div class="projects-viewport" tabindex="0" aria-label="Swipe or use the arrow buttons to browse projects">
+          <div class="projects-grid">
 
         <!-- 1. Flagship RL DQN LLM -->
         <article class="project-card" data-category="rl nlp generative">
@@ -327,16 +329,16 @@
             <span class="project-overlay-badge">Flagship Deep RL</span>
           </div>
           <div class="project-content">
-            <h3 class="project-title">DQN for Dynamic Prompt Optimization on LLMs</h3>
+            <h3 class="project-title">DQN for Dynamic Prompt Modifier Selection</h3>
             <p class="project-desc">
-              Reinforcement Learning agent (DQN) trained to dynamically inject prompt modifiers into a frozen LLM (TinyLlama-1.1B) on the BoolQ dataset, outperforming zero-shot and Chain-of-Thought while minimizing answer length.
+              A DQN agent that selects discrete textual prompt modifiers for a frozen TinyLlama-1.1B model on BoolQ, balancing answer correctness and response length.
             </p>
             <div class="project-tags">
               <span class="project-tag">PyTorch</span>
               <span class="project-tag">DQN</span>
               <span class="project-tag">TinyLlama</span>
               <span class="project-tag">HuggingFace</span>
-              <span class="project-tag">Reward: 1.403</span>
+              <span class="project-tag">BoolQ</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/RL_DQN_LLM_Prompt_Optimization" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -387,7 +389,7 @@
               <span class="project-tag">PyTorch</span>
               <span class="project-tag">ST-GCNN</span>
               <span class="project-tag">CVAE-GMM</span>
-              <span class="project-tag">minADE: 1.03m</span>
+              <span class="project-tag">ETH / UCY</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Pedestrian-Trajectory-Prediction-CVAE-GMM" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -412,7 +414,7 @@
               <span class="project-tag">YOLOv11</span>
               <span class="project-tag">PyTorch</span>
               <span class="project-tag">Diffusion</span>
-              <span class="project-tag">mAP50: 92.4%</span>
+              <span class="project-tag">mAP50: 83%</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Helmet-Detection-Text-to-Video" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -556,13 +558,13 @@
           <div class="project-content">
             <h3 class="project-title">Cancer Histopathology Classification</h3>
             <p class="project-desc">
-              Clinical digital pathology diagnostic framework benchmarking Vision Transformers (ViT-B/16) against deep residual networks (ResNet-50) for fine-grained tumor subtyping.
+              Comparative five-class histopathology image classification study benchmarking Vision Transformers (ViT-B/16) against ResNet-50 with transfer learning.
             </p>
             <div class="project-tags">
               <span class="project-tag">Vision Transformer</span>
               <span class="project-tag">ResNet-50</span>
-              <span class="project-tag">F1-Score: 94.6%</span>
-              <span class="project-tag">AUC: 0.982</span>
+              <span class="project-tag">LC25000</span>
+              <span class="project-tag">Transfer Learning</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Cancer-Histopathology-Classification-ViT-ResNet" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -586,8 +588,8 @@
             <div class="project-tags">
               <span class="project-tag">Custom CNN</span>
               <span class="project-tag">OpenCV</span>
-              <span class="project-tag">Accuracy: 98.7%</span>
-              <span class="project-tag">30+ FPS</span>
+              <span class="project-tag">3-Class Detection</span>
+              <span class="project-tag">Real-Time Inference</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Face_Mask_Detection_Custom_CNN" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -660,7 +662,7 @@
             <div class="project-tags">
               <span class="project-tag">Scikit-Learn</span>
               <span class="project-tag">TF-IDF</span>
-              <span class="project-tag">Accuracy: 91.2%</span>
+              <span class="project-tag">Sentiment Analysis</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Amazon_Fashion_Sentiment_Analysis_NLP" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -679,12 +681,12 @@
           <div class="project-content">
             <h3 class="project-title">Credit Card Fraud Detection &amp; Risk Profiling</h3>
             <p class="project-desc">
-              Imbalanced tabular classification pipeline utilizing SMOTE oversampling, Cost-Sensitive XGBoost, and precision-recall threshold optimization across 284k transactions.
+              Imbalanced tabular classification pipeline using resampling, cost-sensitive models, and precision-recall analysis for fraud risk profiling.
             </p>
             <div class="project-tags">
               <span class="project-tag">XGBoost</span>
               <span class="project-tag">SMOTE</span>
-              <span class="project-tag">PR-AUC: 0.88</span>
+              <span class="project-tag">Class Imbalance</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Credit_Card_Fraud_Detection_EDA_ML" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -708,7 +710,7 @@
             <div class="project-tags">
               <span class="project-tag">Random Forest</span>
               <span class="project-tag">SHAP</span>
-              <span class="project-tag">R²: 0.87</span>
+              <span class="project-tag">Regression Analysis</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/US_Medical_Cost_Regression_Analysis" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -718,6 +720,15 @@
           </div>
         </article>
 
+          </div>
+        </div>
+        <button class="carousel-btn carousel-prev" type="button" aria-label="Previous project group">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn carousel-next" type="button" aria-label="Next project group">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+        <div class="carousel-status" aria-live="polite">1 / 6</div>
       </div>
     </div>
   </section>
@@ -877,6 +888,9 @@
           I am always open to discussing novel research directions, exchanging ideas on <strong>Autonomous Systems & Deep Learning</strong>, and actively exploring prospective <strong>Ph.D. positions</strong> and academic collaboration opportunities.
         </p>
         <div class="contact-links">
+          <a href="mailto:mehdi.sadeghian9978@gmail.com" class="btn-primary">
+            <i class="fa-solid fa-envelope"></i> Send an Email
+          </a>
           <a href="https://www.linkedin.com/in/mehdi-sadeghian" target="_blank" rel="noopener noreferrer" class="btn-primary">
             <i class="fa-brands fa-linkedin-in"></i> Connect on LinkedIn
           </a>

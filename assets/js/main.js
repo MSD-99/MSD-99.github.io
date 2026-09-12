@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initParticleCanvas() {
   const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const ctx = canvas.getContext('2d');
 
   let width = (canvas.width = window.innerWidth);
@@ -171,6 +172,7 @@ function initNavbar() {
     navToggle.addEventListener('click', (e) => {
       e.stopPropagation();
       navLinks.classList.toggle('show');
+      navToggle.setAttribute('aria-expanded', String(navLinks.classList.contains('show')));
       if (icon) {
         if (navLinks.classList.contains('show')) {
           icon.classList.remove('fa-bars');
@@ -185,6 +187,7 @@ function initNavbar() {
     links.forEach((link) => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -195,6 +198,7 @@ function initNavbar() {
     document.addEventListener('click', (e) => {
       if (!navbar.contains(e.target) && navLinks.classList.contains('show')) {
         navLinks.classList.remove('show');
+        navToggle.setAttribute('aria-expanded', 'false');
         if (icon) {
           icon.classList.remove('fa-xmark');
           icon.classList.add('fa-bars');
@@ -209,7 +213,68 @@ function initNavbar() {
    ========================================================================== */
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectCards = Array.from(document.querySelectorAll('.project-card'));
+  const viewport = document.querySelector('.projects-viewport');
+  const grid = document.querySelector('.projects-grid');
+  const previousBtn = document.querySelector('.carousel-prev');
+  const nextBtn = document.querySelector('.carousel-next');
+  const status = document.querySelector('.carousel-status');
+  let currentPage = 0;
+  let scrollFrame;
+
+  if (!viewport || !grid || !previousBtn || !nextBtn || !status) return;
+
+  function cardsPerPage() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 992) return 2;
+    return 3;
+  }
+
+  function visibleCards() {
+    return projectCards.filter((card) => card.style.display !== 'none');
+  }
+
+  function pageCount() {
+    return Math.max(1, Math.ceil(visibleCards().length / cardsPerPage()));
+  }
+
+  function updateControls() {
+    const pages = pageCount();
+    currentPage = Math.min(currentPage, pages - 1);
+    previousBtn.disabled = currentPage === 0;
+    nextBtn.disabled = currentPage >= pages - 1;
+    status.textContent = `${currentPage + 1} / ${pages}`;
+  }
+
+  function pageOffset(page) {
+    const cards = visibleCards();
+    const target = cards[Math.min(page * cardsPerPage(), cards.length - 1)];
+    return target ? target.offsetLeft - grid.offsetLeft : 0;
+  }
+
+  function goToPage(page, behavior = 'smooth') {
+    const pages = pageCount();
+    currentPage = Math.max(0, Math.min(page, pages - 1));
+    viewport.scrollTo({ left: pageOffset(currentPage), behavior });
+    updateControls();
+  }
+
+  function syncPageToScroll() {
+    const pages = pageCount();
+    let nearestPage = 0;
+    let nearestDistance = Infinity;
+
+    for (let page = 0; page < pages; page += 1) {
+      const distance = Math.abs(viewport.scrollLeft - pageOffset(page));
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestPage = page;
+      }
+    }
+
+    currentPage = nearestPage;
+    updateControls();
+  }
 
   function applyFilter(filter) {
     projectCards.forEach((card) => {
@@ -218,22 +283,53 @@ function initProjectFilters() {
         card.style.display = 'flex';
         card.style.opacity = '1';
         card.style.visibility = 'visible';
-        card.style.animation = 'fadeIn 0.35s ease forwards';
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          card.style.animation = 'fadeIn 0.35s ease forwards';
+        }
       } else {
         card.style.display = 'none';
       }
     });
+
+    currentPage = 0;
+    viewport.scrollTo({ left: 0, behavior: 'auto' });
+    updateControls();
   }
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach((b) => b.classList.remove('active'));
+      filterBtns.forEach((b) => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
 
       const filter = btn.getAttribute('data-filter');
       applyFilter(filter);
     });
   });
+
+  previousBtn.addEventListener('click', () => goToPage(currentPage - 1));
+  nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
+
+  viewport.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      goToPage(currentPage - 1);
+    }
+    if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      goToPage(currentPage + 1);
+    }
+  });
+
+  viewport.addEventListener('scroll', () => {
+    cancelAnimationFrame(scrollFrame);
+    scrollFrame = requestAnimationFrame(syncPageToScroll);
+  }, { passive: true });
+
+  window.addEventListener('resize', () => goToPage(0, 'auto'));
 
   // Ensure all cards are visible on initial load
   applyFilter('all');
