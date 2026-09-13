@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function initParticleCanvas() {
   const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const ctx = canvas.getContext('2d');
 
   let width = (canvas.width = window.innerWidth);
