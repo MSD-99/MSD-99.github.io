@@ -281,7 +281,7 @@
           <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
           <h3>Computer Vision & Generative AI</h3>
           <p>
-            Real-time multi-class object detection (YOLOv11), Unpaired Image-to-Image translation with CycleGAN, and multimodal generative Text-to-Video diffusion pipelines.
+            Object detection with YOLOv11, unpaired image-to-image translation with CycleGAN, and generative text-to-video experiments.
           </p>
         </div>
 
@@ -402,13 +402,13 @@
         <!-- 3. Helmet Detection & Video Generation -->
         <article class="project-card" data-category="vision generative">
           <div class="project-img-wrapper">
-            <img src="assets/images/project_helmet.jpg" alt="Real-Time Helmet Detection and Text-to-Video" loading="lazy">
+            <img src="assets/images/project_helmet.jpg" alt="Helmet Detection and Text-to-Video" loading="lazy">
             <span class="project-overlay-badge">YOLOv11 &amp; GenAI</span>
           </div>
           <div class="project-content">
-            <h3 class="project-title">Real-Time Helmet Detection &amp; Video Generation</h3>
+            <h3 class="project-title">Helmet Detection &amp; Video Generation</h3>
             <p class="project-desc">
-              Industrial safety computer vision system featuring fine-tuned YOLOv11 for multi-class worker PPE compliance detection combined with a text-to-video generative pipeline for synthetic site monitoring.
+              Two-class YOLOv11 helmet detection paired with text-to-video generation and framewise inference on four short synthetic rider clips.
             </p>
             <div class="project-tags">
               <span class="project-tag">YOLOv11</span>
@@ -577,19 +577,19 @@
         <!-- 10. Face Mask Detection -->
         <article class="project-card" data-category="vision medical">
           <div class="project-img-wrapper">
-            <img src="assets/images/project_face_mask.png" alt="Real-Time Face Mask Detection" loading="lazy">
+            <img src="assets/images/project_face_mask.png" alt="Face Mask Classification" loading="lazy">
             <span class="project-overlay-badge">Edge Vision</span>
           </div>
           <div class="project-content">
-            <h3 class="project-title">Real-Time Face Mask Detection (MaskCNN)</h3>
+            <h3 class="project-title">Face Mask Classification (MaskCNN)</h3>
             <p class="project-desc">
-              Edge-deployable lightweight Convolutional Neural Network architecture engineered for real-time edge classification of properly masked, incorrectly masked, and unmasked individuals.
+              Lightweight custom CNN for binary classification of masked and unmasked face images, with confusion-matrix and ROC analysis.
             </p>
             <div class="project-tags">
               <span class="project-tag">Custom CNN</span>
-              <span class="project-tag">OpenCV</span>
-              <span class="project-tag">3-Class Detection</span>
-              <span class="project-tag">Real-Time Inference</span>
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">Binary Classification</span>
+              <span class="project-tag">ROC Analysis</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Face_Mask_Detection_Custom_CNN" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -608,13 +608,13 @@
           <div class="project-content">
             <h3 class="project-title">Tabular RL Methods Suite (SARSA / Q-Learning)</h3>
             <p class="project-desc">
-              Complete implementation and comparative study of On-Policy SARSA, Off-Policy Q-Learning, Expected SARSA, and Monte Carlo Control in Cliff Walking and GridWorld domains.
+              GridWorld comparison of first-visit Monte Carlo and TD(0) prediction with SARSA and Q-Learning control.
             </p>
             <div class="project-tags">
               <span class="project-tag">Q-Learning</span>
               <span class="project-tag">SARSA</span>
-              <span class="project-tag">Expected SARSA</span>
-              <span class="project-tag">Monte Carlo</span>
+              <span class="project-tag">TD(0)</span>
+              <span class="project-tag">Monte Carlo Prediction</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Tabular_RL_Methods_GridWorld" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -657,11 +657,11 @@
           <div class="project-content">
             <h3 class="project-title">Amazon Fashion Sentiment Classification</h3>
             <p class="project-desc">
-              End-to-end natural language processing pipeline implementing TF-IDF vectorization, dense embedding representations, and ensemble classifiers for high-throughput customer review sentiment analysis.
+              Bag-of-Words sentiment experiment comparing logistic regression, linear SVM, and a decision tree on a balanced single-product review sample.
             </p>
             <div class="project-tags">
               <span class="project-tag">Scikit-Learn</span>
-              <span class="project-tag">TF-IDF</span>
+              <span class="project-tag">Bag-of-Words</span>
               <span class="project-tag">Sentiment Analysis</span>
             </div>
             <div class="project-footer">
@@ -679,14 +679,14 @@
             <span class="project-overlay-badge">Financial AI</span>
           </div>
           <div class="project-content">
-            <h3 class="project-title">Credit Card Fraud Detection &amp; Risk Profiling</h3>
+            <h3 class="project-title">Credit Card Fraud EDA &amp; Risk Profiling</h3>
             <p class="project-desc">
-              Imbalanced tabular classification pipeline using resampling, cost-sensitive models, and precision-recall analysis for fraud risk profiling.
+              Exploratory analysis of one million synthetic transaction rows, covering class balance, correlations, authentication indicators, and online/offline fraud rates.
             </p>
             <div class="project-tags">
-              <span class="project-tag">XGBoost</span>
-              <span class="project-tag">SMOTE</span>
-              <span class="project-tag">Class Imbalance</span>
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Correlation</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/Credit_Card_Fraud_Detection_EDA_ML" target="_blank" rel="noopener noreferrer" class="project-link">
@@ -705,12 +705,12 @@
           <div class="project-content">
             <h3 class="project-title">U.S. Medical Cost &amp; Insurance Risk Modeling</h3>
             <p class="project-desc">
-              Predictive healthcare actuarial modeling using Polynomial Ridge Regression, Random Forests, and Gradient Boosting with SHAP value interpretability for demographic risk stratification.
+              Exploratory insurance-charge analysis comparing region-only linear regression with a smoker, age, and BMI linear model.
             </p>
             <div class="project-tags">
-              <span class="project-tag">Random Forest</span>
-              <span class="project-tag">SHAP</span>
-              <span class="project-tag">Regression Analysis</span>
+              <span class="project-tag">Linear Regression</span>
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Scikit-Learn</span>
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/US_Medical_Cost_Regression_Analysis" target="_blank" rel="noopener noreferrer" class="project-link">
