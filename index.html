@@ -322,33 +322,6 @@
         <div class="projects-viewport" tabindex="0" aria-label="Swipe or use the arrow buttons to browse projects">
           <div class="projects-grid">
 
-        <!-- 1. Flagship RL DQN LLM -->
-        <article class="project-card" data-category="rl nlp generative">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project_rl_dqn_llm.png" alt="DQN Prompt Optimization on Frozen LLM" loading="lazy">
-            <span class="project-overlay-badge">Flagship Deep RL</span>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">DQN for Dynamic Prompt Modifier Selection</h3>
-            <p class="project-desc">
-              A DQN agent that selects discrete textual prompt modifiers for a frozen TinyLlama-1.1B model on BoolQ, balancing answer correctness and response length.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">PyTorch</span>
-              <span class="project-tag">DQN</span>
-              <span class="project-tag">TinyLlama</span>
-              <span class="project-tag">HuggingFace</span>
-              <span class="project-tag">BoolQ</span>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/MSD-99/RL_DQN_LLM_Prompt_Optimization" target="_blank" rel="noopener noreferrer" class="project-link">
-                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-                <!-- SCARA Manipulator Project -->
         <article class="project-card" data-category="trajectory">
           <div class="project-img-wrapper">
             <img src="assets/images/project_scara_robot.png" alt="SCARA Manipulator Dynamics & Simscape Control" loading="lazy">
@@ -374,7 +347,6 @@
           </div>
         </article>
 
-        <!-- 2. Pedestrian Trajectory Prediction -->
         <article class="project-card" data-category="trajectory generative">
           <div class="project-img-wrapper">
             <img src="assets/images/project_trajectory.jpg" alt="Pedestrian Trajectory Prediction with Social-STGCNN" loading="lazy">
@@ -399,7 +371,31 @@
           </div>
         </article>
 
-        <!-- 3. Helmet Detection & Video Generation -->
+        <article class="project-card" data-category="rl nlp generative">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_rl_dqn_llm.png" alt="DQN Prompt Optimization on Frozen LLM" loading="lazy">
+            <span class="project-overlay-badge">Deep RL</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">DQN for Dynamic Prompt Modifier Selection</h3>
+            <p class="project-desc">
+              A DQN agent that selects discrete textual prompt modifiers for a frozen TinyLlama-1.1B model on BoolQ, balancing answer correctness and response length.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">DQN</span>
+              <span class="project-tag">TinyLlama</span>
+              <span class="project-tag">HuggingFace</span>
+              <span class="project-tag">BoolQ</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/RL_DQN_LLM_Prompt_Optimization" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
         <article class="project-card" data-category="vision generative">
           <div class="project-img-wrapper">
             <img src="assets/images/project_helmet.jpg" alt="Helmet Detection and Text-to-Video" loading="lazy">
@@ -424,7 +420,6 @@
           </div>
         </article>
 
-        <!-- 4. Deep RL & Function Approximation -->
         <article class="project-card" data-category="rl">
           <div class="project-img-wrapper">
             <img src="assets/images/project_func_approx_dqn.png" alt="Function Approximation and Deep Q-Networks in RL" loading="lazy">
@@ -449,82 +444,6 @@
           </div>
         </article>
 
-        <!-- 5. Model-Based RL Dyna-Q -->
-        <article class="project-card" data-category="rl">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project_dyna_q.png" alt="Dyna and Dyna-Q planning in reinforcement learning" loading="lazy">
-            <span class="project-overlay-badge">Model-Based RL</span>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Model-Based Planning with Dyna &amp; Dyna-Q</h3>
-            <p class="project-desc">
-              Direct Q-learning updates combined with simulated model-based planning in a deterministic 5×5 Grid World.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Dyna-Q</span>
-              <span class="project-tag">Dyna-Q</span>
-              <span class="project-tag">Model-Based RL</span>
-              <span class="project-tag">Planning</span>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/MSD-99/Dyna_and_DynaQ_Planning_RL" target="_blank" rel="noopener noreferrer" class="project-link">
-                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 6. GridWorld Exploration Policies -->
-        <article class="project-card" data-category="rl">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project_gridworld_rl.png" alt="GridWorld Exploration Policies Benchmark" loading="lazy">
-            <span class="project-overlay-badge">Exploration Benchmark</span>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">GridWorld Exploration Dynamics &amp; Policies</h3>
-            <p class="project-desc">
-              Comprehensive empirical evaluation of ε-Greedy, Upper Confidence Bound (UCB), and Stochastic Gradient exploration strategies on custom obstacle GridWorld MDPs.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">UCB</span>
-              <span class="project-tag">Gradient Bandit</span>
-              <span class="project-tag">Epsilon-Greedy</span>
-              <span class="project-tag">Heatmaps</span>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/MSD-99/GridWorld_Exploration_Policies_RL" target="_blank" rel="noopener noreferrer" class="project-link">
-                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 7. Jack's Car Rental Dynamic Programming -->
-        <article class="project-card" data-category="rl">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project_jacks_car.png" alt="Jack's Car Rental Dynamic Programming MDP" loading="lazy">
-            <span class="project-overlay-badge">Dynamic Programming</span>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Jack's Car Rental: Dynamic Programming &amp; MDPs</h3>
-            <p class="project-desc">
-              Exact Markov Decision Process resolution via Policy Iteration, Policy Evaluation, and Value Iteration for Poisson-distributed resource allocation and inventory management.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Policy Iteration</span>
-              <span class="project-tag">Value Iteration</span>
-              <span class="project-tag">MDP</span>
-              <span class="project-tag">Poisson Dist.</span>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/MSD-99/Jacks_Car_Rental_Dynamic_Programming_MDP" target="_blank" rel="noopener noreferrer" class="project-link">
-                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 8. CycleGAN Image Translation -->
         <article class="project-card" data-category="generative vision">
           <div class="project-img-wrapper">
             <img src="assets/images/project_cyclegan.jpg" alt="Unpaired Image-to-Image Translation with CycleGAN" loading="lazy">
@@ -549,7 +468,30 @@
           </div>
         </article>
 
-        <!-- 9. Cancer Histopathology Classification -->
+        <article class="project-card" data-category="rl">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_dyna_q.png" alt="Dyna and Dyna-Q planning in reinforcement learning" loading="lazy">
+            <span class="project-overlay-badge">Model-Based RL</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Model-Based Planning with Dyna &amp; Dyna-Q</h3>
+            <p class="project-desc">
+              Direct Q-learning updates combined with simulated model-based planning in a deterministic 5×5 Grid World.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Dyna-Q</span>
+              <span class="project-tag">Dyna-Q</span>
+              <span class="project-tag">Model-Based RL</span>
+              <span class="project-tag">Planning</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/Dyna_and_DynaQ_Planning_RL" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
         <article class="project-card" data-category="medical vision">
           <div class="project-img-wrapper">
             <img src="assets/images/project_cancer.jpg" alt="Cancer Histopathology Classification" loading="lazy">
@@ -574,32 +516,54 @@
           </div>
         </article>
 
-        <!-- 10. Face Mask Detection -->
-        <article class="project-card" data-category="vision medical">
+        <article class="project-card" data-category="rl">
           <div class="project-img-wrapper">
-            <img src="assets/images/project_face_mask.png" alt="Face Mask Classification" loading="lazy">
-            <span class="project-overlay-badge">Edge Vision</span>
+            <img src="assets/images/project_jacks_car.png" alt="Jack's Car Rental Dynamic Programming MDP" loading="lazy">
+            <span class="project-overlay-badge">Dynamic Programming</span>
           </div>
           <div class="project-content">
-            <h3 class="project-title">Face Mask Classification (MaskCNN)</h3>
+            <h3 class="project-title">Jack's Car Rental: Dynamic Programming &amp; MDPs</h3>
             <p class="project-desc">
-              Lightweight custom CNN for binary classification of masked and unmasked face images, with confusion-matrix and ROC analysis.
+              Exact Markov Decision Process resolution via Policy Iteration, Policy Evaluation, and Value Iteration for Poisson-distributed resource allocation and inventory management.
             </p>
             <div class="project-tags">
-              <span class="project-tag">Custom CNN</span>
-              <span class="project-tag">PyTorch</span>
-              <span class="project-tag">Binary Classification</span>
-              <span class="project-tag">ROC Analysis</span>
+              <span class="project-tag">Policy Iteration</span>
+              <span class="project-tag">Value Iteration</span>
+              <span class="project-tag">MDP</span>
+              <span class="project-tag">Poisson Dist.</span>
             </div>
             <div class="project-footer">
-              <a href="https://github.com/MSD-99/Face_Mask_Detection_Custom_CNN" target="_blank" rel="noopener noreferrer" class="project-link">
+              <a href="https://github.com/MSD-99/Jacks_Car_Rental_Dynamic_Programming_MDP" target="_blank" rel="noopener noreferrer" class="project-link">
                 View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- 11. Tabular RL Methods -->
+        <article class="project-card" data-category="rl">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_gridworld_rl.png" alt="GridWorld Exploration Policies Benchmark" loading="lazy">
+            <span class="project-overlay-badge">Exploration Benchmark</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">GridWorld Exploration Dynamics &amp; Policies</h3>
+            <p class="project-desc">
+              Comprehensive empirical evaluation of ε-Greedy, Upper Confidence Bound (UCB), and Stochastic Gradient exploration strategies on custom obstacle GridWorld MDPs.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">UCB</span>
+              <span class="project-tag">Gradient Bandit</span>
+              <span class="project-tag">Epsilon-Greedy</span>
+              <span class="project-tag">Heatmaps</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/GridWorld_Exploration_Policies_RL" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
         <article class="project-card" data-category="rl">
           <div class="project-img-wrapper">
             <img src="assets/images/project_gridworld_rl.png" alt="Tabular Reinforcement Learning Methods" loading="lazy">
@@ -624,7 +588,6 @@
           </div>
         </article>
 
-        <!-- 12. Non-Stationary Bandits -->
         <article class="project-card" data-category="rl">
           <div class="project-img-wrapper">
             <img src="assets/images/project_bandit.png" alt="Non-Stationary Multi-Armed Bandits" loading="lazy">
@@ -648,7 +611,30 @@
           </div>
         </article>
 
-        <!-- 13. Amazon Fashion Sentiment -->
+        <article class="project-card" data-category="vision medical">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_face_mask.png" alt="Face Mask Classification" loading="lazy">
+            <span class="project-overlay-badge">Edge Vision</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Face Mask Classification (MaskCNN)</h3>
+            <p class="project-desc">
+              Lightweight custom CNN for binary classification of masked and unmasked face images, with confusion-matrix and ROC analysis.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Custom CNN</span>
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">Binary Classification</span>
+              <span class="project-tag">ROC Analysis</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/Face_Mask_Detection_Custom_CNN" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
         <article class="project-card" data-category="nlp analytics">
           <div class="project-img-wrapper">
             <img src="assets/images/project_amazon_nlp.png" alt="Amazon Fashion Sentiment Classification" loading="lazy">
@@ -672,31 +658,6 @@
           </div>
         </article>
 
-        <!-- 14. Credit Card Fraud Detection -->
-        <article class="project-card" data-category="analytics">
-          <div class="project-img-wrapper">
-            <img src="assets/images/project_credit_card.png" alt="Credit Card Fraud Detection" loading="lazy">
-            <span class="project-overlay-badge">Financial AI</span>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">Credit Card Fraud EDA &amp; Risk Profiling</h3>
-            <p class="project-desc">
-              Exploratory analysis of one million synthetic transaction rows, covering class balance, correlations, authentication indicators, and online/offline fraud rates.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Pandas</span>
-              <span class="project-tag">EDA</span>
-              <span class="project-tag">Correlation</span>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/MSD-99/Credit_Card_Fraud_Detection_EDA_ML" target="_blank" rel="noopener noreferrer" class="project-link">
-                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 15. Medical Cost Regression -->
         <article class="project-card" data-category="analytics medical">
           <div class="project-img-wrapper">
             <img src="assets/images/project_medical_cost.png" alt="U.S. Medical Cost Regression Analysis" loading="lazy">
@@ -714,6 +675,29 @@
             </div>
             <div class="project-footer">
               <a href="https://github.com/MSD-99/US_Medical_Cost_Regression_Analysis" target="_blank" rel="noopener noreferrer" class="project-link">
+                View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="analytics">
+          <div class="project-img-wrapper">
+            <img src="assets/images/project_credit_card.png" alt="Credit Card Fraud Detection" loading="lazy">
+            <span class="project-overlay-badge">Financial AI</span>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Credit Card Fraud EDA &amp; Risk Profiling</h3>
+            <p class="project-desc">
+              Exploratory analysis of one million synthetic transaction rows, covering class balance, correlations, authentication indicators, and online/offline fraud rates.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Pandas</span>
+              <span class="project-tag">EDA</span>
+              <span class="project-tag">Correlation</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/MSD-99/Credit_Card_Fraud_Detection_EDA_ML" target="_blank" rel="noopener noreferrer" class="project-link">
                 View Repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
